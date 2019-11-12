@@ -5,3 +5,31 @@ Request: IdDTO(id=1)
 Response: FioDTO(fio=Test Testov)
 === encryption fio: ddaac6ed642c14e45948516b414ed48e5566e024f52e744ee024ae5335ef69d2ff898cc6d6a9e7f783cac6c4d3117f10
 === decryption fio: FioDTO(fio=Test Testov)
+2019-11-12 20:53:56 INFO  UserController:37 - 
+Request: IdDTO(id=1)
+=== encryption id: b3cb0904dfe60f1b40d4f75909ddcaf05c9e7c1e9146eed5ccc947d5f433c2ce
+=== decryption id: IdDTO(id=1)
+Response: FioDTO(fio=Test Testov)
+=== encryption fio: afec1fd3aa14c53916e3e11bfcf7feb2fc0d40a705f97f12d2be5ff00c0437613fa232a8139f7b7a10c37c5d4c7d1f6c
+=== decryption fio: FioDTO(fio=Test Testov)
+2019-11-12 21:01:45 INFO  UserController:37 - 
+Request: IdDTO(id=1)
+=== encryption id: ed61da3320dc883e81affdd335a95b1e48a55c7660afccb5f41e634b753fc2a5
+=== decryption id: IdDTO(id=1)
+Response: FioDTO(fio=Test Testov)
+=== encryption fio: 5ed0e7b47be5812b07238cd169319f5fa569fefbdd598d3f2810a17766460d8c48c65448849569618fda689cece6e858
+=== decryption fio: FioDTO(fio=Test Testov)
+2019-11-12 21:07:50 INFO  UserController:37 - 
+Request: IdDTO(id=1)
+=== encryption id: 71473c37e6663ec3a3d513be55cc7e9656b8bb1303951ef082efeb4a5e9ec8c8
+=== decryption id: IdDTO(id=1)
+Response: FioDTO(fio=Test Testov)
+=== encryption fio: 4413e138e1f1b18fd994b1e8f661661e49f99da0b041f317d07e7eca98dfb62dfd0b6b8cc03883424c52eba263c3ab1c
+=== decryption fio: FioDTO(fio=Test Testov)
+2019-11-12 21:09:57 INFO  UserController:34 - 
+Request: IdDTO(id=1)
+=== encryption id: 78449e2f4f310a3d3a154388fd193c79e666aa153c505268cda4491756cb1fe9
+=== decryption id: IdDTO(id=1)
+Response: FioDTO(fio=Test Testov)
+=== encryption fio: 1e41250ee9a26e18c4b5bc6c5f2c770232dd126bdf3062d348d52eed12f6a7fddbca50bd30bae59365d68e9ee6cab06d
+=== decryption fio: FioDTO(fio=Test Testov)

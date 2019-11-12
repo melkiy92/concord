@@ -4,19 +4,17 @@ import com.example.concord.dtos.IdDTO;
 import com.example.concord.dtos.FioDTO;
 import com.example.concord.models.User;
 import com.example.concord.repositories.UserRepository;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
-import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    @NonNull
+    @NotNull
     private final UserRepository userRepository;
 
     @NotNull
@@ -24,8 +22,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public FioDTO findFio(IdDTO idDTO) {
-        User user = userRepository.findById(idDTO.id).orElseThrow(NoSuchElementException::new);
-        return new FioDTO(user.getFio());
+        Optional<User> optionalUser = userRepository.findById(idDTO.id);
+        return optionalUser.map(user -> new FioDTO(user.getFio())).orElse(null);
     }
 
 

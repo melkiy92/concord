@@ -2,6 +2,7 @@ package com.example.concord.controllers;
 
 import com.example.concord.dtos.IdDTO;
 import com.example.concord.dtos.FioDTO;
+import com.example.concord.exceptions.UserNotFoundException;
 import com.example.concord.services.Encryptor;
 import com.example.concord.services.UserService;
 import lombok.RequiredArgsConstructor;
@@ -11,11 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.constraints.NotNull;
-
 import org.apache.log4j.Logger;
-
-import java.util.NoSuchElementException;
 
 @RestController
 @RequiredArgsConstructor
@@ -28,12 +25,9 @@ public class UserController {
     public ResponseEntity<FioDTO> findFio(@RequestBody IdDTO idDTO) {
         String encryptedId = encryptor.encryptText(idDTO.toString());
         String decryptedId = encryptor.decryptText(encryptedId);
-        FioDTO fioDTO;
-        try {
-            fioDTO  = userService.findFio(idDTO);
-        } catch (NoSuchElementException e) {
-            e.getMessage();
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        FioDTO fioDTO = userService.findFio(idDTO);
+        if(fioDTO == null) {
+           throw new UserNotFoundException();
         }
         String encryptedFio = encryptor.encryptText(fioDTO.toString());
         String decryptedFio = encryptor.decryptText(encryptedFio);
